@@ -1,0 +1,60 @@
+{
+	"name": "@vmp/i18n",
+	"version": "1.0.0",
+	"description": "A simple library used to manage our multi-language systems.",
+	"scripts": {
+		"format": "prettier --write src/**/*.{mjs,ts,js}",
+		"build": "tsup && tsc -b src",
+		"watch": "tsup -w && tsc -b src",
+		"update": "pnpm update --latest --interactive"
+	},
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist/*"
+	],
+	"exports": {
+		"require": "./dist/index.js",
+		"import": "./dist/index.mjs"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vespucci-mp/i18n.git"
+	},
+	"author": "Vatto",
+	"contributors": [
+		"LeonardSSH"
+	],
+	"bugs": {
+		"url": "https://github.com/vespucci-mp/i18n/issues"
+	},
+	"homepage": "https://github.com/vespucci-mp/i18n#readme",
+	"devDependencies": {
+		"@swc/core": "^1.2.133",
+		"@types/node": "^17.0.10",
+		"prettier": "^2.5.1",
+		"tsup": "^5.11.13",
+		"typescript": "^4.5.5"
+	},
+	"prettier": {
+		"$schema": "http://json.schemastore.org/prettierrc",
+		"endOfLine": "lf",
+		"printWidth": 100,
+		"quoteProps": "as-needed",
+		"semi": true,
+		"singleQuote": true,
+		"tabWidth": 4,
+		"trailingComma": "none",
+		"useTabs": true,
+		"overrides": [
+			{
+				"files": "*.yml",
+				"options": {
+					"tabWidth": 2,
+					"useTabs": false
+				}
+			}
+		]
+	}
+}
