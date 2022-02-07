@@ -13,6 +13,8 @@
 # 🤓 Usage
 
 ```ts
+import { createLanguagePack, getLanguagePack } from '@vmp/i18n';
+
 createLanguagePack(`Login`, {
 	WELCOME_USER: {
 		EN: ({ name }) => `Welcome ${name}!`
@@ -21,7 +23,7 @@ createLanguagePack(`Login`, {
 
 const lang = getLanguagePack('Login', 'EN');
 
-console.log(lang.get('WELCOME_USER', { nume: 'Vatto ' }));
+console.log(lang.get('WELCOME_USER', { name: 'Vatto ' }));
 ```
 
 ## 👨‍💻 Contributing
