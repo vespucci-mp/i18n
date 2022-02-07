@@ -1,4 +1,4 @@
-export declare type LanguagesCallback = (args: any) => string;
+export declare type LanguagesCallback = (args?: any) => string;
 export interface Languages {
     EN: LanguagesCallback | string;
     RO?: LanguagesCallback | string;
