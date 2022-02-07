@@ -16,7 +16,6 @@ node_modules/
 .yarn/build-state.yml
 
 # Build Artifacts
-dist/
 build/
 docs/
 test_out/
