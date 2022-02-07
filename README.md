@@ -6,9 +6,11 @@
 
 # 📦 Installation
 
--   Using yarn: `yarn add github:vespucci-mp/i18n#build`
--   Using npm: `npm i github:vespucci-mp/i18n#build`
--   Using pnpm: `pnpm add github:vespucci-mp/i18n#build`
+> Use `github:vespucci-mp/i18n#build` to latest build
+
+-   Using yarn: `yarn add github:vespucci-mp/i18n#v0.0.1`
+-   Using npm: `npm i github:vespucci-mp/i18n#v0.0.1`
+-   Using pnpm: `pnpm add github:vespucci-mp/i18n#v0.0.1`
 
 # 🤓 Usage
 
