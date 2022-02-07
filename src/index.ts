@@ -23,6 +23,10 @@ export const getLanguagePack = (systemId: string, specificLanguage?: 'RO' | 'EN'
 			const desiredMessage = messagePack[specificLanguage!];
 			const message = desiredMessage !== undefined ? desiredMessage : messagePack['EN'];
 
+			if (message === undefined) {
+				return messageId;
+			}
+
 			return typeof message === 'string' ? message : message(args);
 		}
 	};
