@@ -43,13 +43,17 @@ var getLanguagePack = /* @__PURE__ */ __name((systemId, specificLanguage) => {
   }
   return {
     get: (messageId, args) => {
-      const messagePack = languagePacks[systemId][messageId];
-      const desiredMessage = messagePack[specificLanguage];
-      const message = desiredMessage !== void 0 ? desiredMessage : messagePack["EN"];
-      if (message === void 0) {
+      try {
+        const messagePack = languagePacks[systemId][messageId];
+        const desiredMessage = messagePack[specificLanguage];
+        const message = desiredMessage !== void 0 ? desiredMessage : messagePack["EN"];
+        if (message === void 0) {
+          return messageId;
+        }
+        return typeof message === "string" ? message : message(args);
+      } catch (error) {
         return messageId;
       }
-      return typeof message === "string" ? message : message(args);
     }
   };
 }, "getLanguagePack");
