@@ -19,15 +19,19 @@ export const getLanguagePack = (systemId: string, specificLanguage?: 'RO' | 'EN'
 
 	return {
 		get: (messageId: string, args?: object) => {
-			const messagePack = languagePacks[systemId][messageId];
-			const desiredMessage = messagePack[specificLanguage!];
-			const message = desiredMessage !== undefined ? desiredMessage : messagePack['EN'];
+			try {
+				const messagePack = languagePacks[systemId][messageId];
+				const desiredMessage = messagePack[specificLanguage!];
+				const message = desiredMessage !== undefined ? desiredMessage : messagePack['EN'];
 
-			if (message === undefined) {
-				return messageId;
+				if (message === undefined) {
+					return messageId;
+				}
+
+				return typeof message === 'string' ? message : message(args);				
+			} catch(error: any) {
+				return messageId;	
 			}
-
-			return typeof message === 'string' ? message : message(args);
 		}
 	};
 };
