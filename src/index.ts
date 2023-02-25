@@ -4,7 +4,7 @@ export const languagePacks: BaseLanguagePack = {};
 
 export const createLanguagePack = async (systemId: string, messages: LanguagePack, serverside?: boolean) => {
 	// @Bugfix for Next.js running this function on the back-end.
-	if(serverside === true && languagePacks[systemId]) return true; // No need to define twice.
+	if(serverside === true && languagePacks[systemId]) return; // No need to define twice.
 	
 	if (languagePacks[systemId] !== undefined) {
 		throw new Error(
