@@ -31,7 +31,9 @@ __export(src_exports, {
   languagePacks: () => languagePacks
 });
 var languagePacks = {};
-var createLanguagePack = /* @__PURE__ */ __name(async (systemId, messages) => {
+var createLanguagePack = /* @__PURE__ */ __name(async (systemId, messages, serverside) => {
+  if (serverside === true && languagePacks[systemId])
+    return;
   if (languagePacks[systemId] !== void 0) {
     throw new Error(`Language pack with id "${systemId}" already exists. Please use a different identifier.`);
   }
