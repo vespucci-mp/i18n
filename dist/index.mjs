@@ -11,6 +11,7 @@ var createLanguagePack = /* @__PURE__ */ __name(async (systemId, messages, serve
   }
   languagePacks[systemId] = messages;
 }, "createLanguagePack");
+var createServerLanguagePack = /* @__PURE__ */ __name(async (systemId, messages) => createLanguagePack(systemId, messages, true), "createServerLanguagePack");
 var getLanguagePack = /* @__PURE__ */ __name((systemId, specificLanguage) => {
   if (languagePacks[systemId] === void 0) {
     throw new Error(`Language pack "${systemId}" doesn't exist.`);
@@ -33,6 +34,7 @@ var getLanguagePack = /* @__PURE__ */ __name((systemId, specificLanguage) => {
 }, "getLanguagePack");
 export {
   createLanguagePack,
+  createServerLanguagePack,
   getLanguagePack,
   languagePacks
 };

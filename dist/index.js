@@ -27,6 +27,7 @@ var __toCommonJS = /* @__PURE__ */ ((cache) => {
 var src_exports = {};
 __export(src_exports, {
   createLanguagePack: () => createLanguagePack,
+  createServerLanguagePack: () => createServerLanguagePack,
   getLanguagePack: () => getLanguagePack,
   languagePacks: () => languagePacks
 });
@@ -39,6 +40,7 @@ var createLanguagePack = /* @__PURE__ */ __name(async (systemId, messages, serve
   }
   languagePacks[systemId] = messages;
 }, "createLanguagePack");
+var createServerLanguagePack = /* @__PURE__ */ __name(async (systemId, messages) => createLanguagePack(systemId, messages, true), "createServerLanguagePack");
 var getLanguagePack = /* @__PURE__ */ __name((systemId, specificLanguage) => {
   if (languagePacks[systemId] === void 0) {
     throw new Error(`Language pack "${systemId}" doesn't exist.`);
@@ -63,6 +65,7 @@ module.exports = __toCommonJS(src_exports);
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   createLanguagePack,
+  createServerLanguagePack,
   getLanguagePack,
   languagePacks
 });
