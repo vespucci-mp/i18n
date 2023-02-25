@@ -15,6 +15,8 @@ export const createLanguagePack = async (systemId: string, messages: LanguagePac
 	languagePacks[systemId] = messages;
 };
 
+export const createServerLanguagePack = async(systemId: string, messages: LanguagePack) => createLanguagePack(systemId, messages, true); // shortcut.
+
 export const getLanguagePack = (systemId: string, specificLanguage?: 'RO' | 'EN') => {
 	if (languagePacks[systemId] === undefined) {
 		throw new Error(`Language pack "${systemId}" doesn't exist.`);
