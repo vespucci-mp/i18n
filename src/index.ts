@@ -2,11 +2,8 @@ import { type LanguagePack, type BaseLanguagePack } from './types';
 
 export const languagePacks: BaseLanguagePack = {};
 
-export const createLanguagePack = async (systemId: string, messages: LanguagePack, serverside?: boolean) => {
-	// @Bugfix for Next.js running this function on the back-end.
-	if(serverside === true && languagePacks[systemId]) return; // No need to define twice.
-	
-	if (languagePacks[systemId] !== undefined) {
+export const createLanguagePack = async (systemId: string, messages: LanguagePack, allowOverwrites?: boolean) => { 	
+	if (languagePacks[systemId] !== undefined && allowOverwrites !== true) {
 		throw new Error(
 			`Language pack with id "${systemId}" already exists. Please use a different identifier.`
 		);
@@ -14,8 +11,6 @@ export const createLanguagePack = async (systemId: string, messages: LanguagePac
 
 	languagePacks[systemId] = messages;
 };
-
-export const createServerLanguagePack = async(systemId: string, messages: LanguagePack) => createLanguagePack(systemId, messages, true); // shortcut.
 
 export const getLanguagePack = (systemId: string, specificLanguage?: 'RO' | 'EN') => {
 	if (languagePacks[systemId] === undefined) {

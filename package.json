@@ -1,6 +1,6 @@
 {
 	"name": "@vmp/i18n",
-	"version": "0.0.3",
+	"version": "1.0.0",
 	"description": "A simple library used to manage our multi-language systems.",
 	"scripts": {
 		"format": "prettier --write src/**/*.{mjs,ts,js}",
