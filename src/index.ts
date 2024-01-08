@@ -1,4 +1,4 @@
-import { type LanguagePack, type BaseLanguagePack } from './types';
+import {  LanguagePack,  BaseLanguagePack } from './types';
 
 export const languagePacks: BaseLanguagePack = {};
 
