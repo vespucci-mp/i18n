@@ -12,7 +12,7 @@ export const createLanguagePack = async (systemId: string, messages: LanguagePac
 	languagePacks[systemId] = messages;
 };
 
-export const getLanguagePack = (systemId: string, specificLanguage?: 'RO' | 'EN') => {
+export const getLanguagePack = (systemId: string, specificLanguage?: 'RO' | 'EN'  |'DE' | 'ES' | 'IT' | 'RU') => {
 	if (languagePacks[systemId] === undefined) {
 		throw new Error(`Language pack "${systemId}" doesn't exist.`);
 	}
